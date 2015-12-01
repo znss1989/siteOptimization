@@ -33,6 +33,10 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
+
+  will-change: transform; 
+  transform: translateZ(0); /* Those two lines add composite layer trying to avoid unnecessary painting */
+  backface-visibility: hidden; /* Hide the element if not on screen */
 }
 
 .randomPizzaContainer {
