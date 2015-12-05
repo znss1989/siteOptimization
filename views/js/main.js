@@ -506,13 +506,12 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover'); // Change elements query method from querySelectorAll to getElementsByClassName
+  var phase;
+  var top = document.body.scrollTop / 1250; // Put the Layout calculation outside the for loop, avoid force synchronized layout
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-  }
-  
-  for (var i = 0; i < items.length; i++) {
+    phase = Math.sin(top + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-  } // Batch the style operation together to avoid the force synchronous layout
+  } // Batch the style operation together to avoid the FSL
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
