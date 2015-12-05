@@ -1,6 +1,33 @@
 ## Steps to Run the Application
 
+1. Download the repository to your local machine and open the index.html file, or go to the test site: http://znss1989.github.io/siteOptimization.
+
+2. Inspect the portfolio site, click around to see the several projects listed to find out more details.
+
+3. Select the "Cam's Pizzeria" project, to check the rendering optimized page.
+
+4. Scroll down the page to see the background variation & its response time in devTool.
+
+5. Change the pizza size with slider, and check its response time in devTool.
+
 ## Optimizations & Changes
+
+#### Part 1: Optimize PageSpeed Insights score for index.html
+1. Inline CSS & use media query on CSS.
+
+2. Defer & async JavaScript files.
+
+3. Optimize images & process source files using Gulp.
+
+#### Part 2: Optimize Frames per Second in pizza.html
+
+1. Avoid the force synchronized layout in function updatePosition.
+
+2. Cut unnecessary ones from the 200 background pizzas added.
+
+3. Change DOM fetching technique to more efficient approaches.
+
+4. Set CSS of some elements to different layers to eliminate painting work.
 
 ## Website Performance Optimization portfolio project
 
