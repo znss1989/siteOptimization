@@ -1,4 +1,4 @@
-/** {
+css/** {
   outline: 1px solid red !important;
 }*/
 * {
@@ -35,12 +35,17 @@ form {
   z-index: -1;
 
   will-change: transform; 
-  transform: translateZ(0); /* Those two lines add composite layer trying to avoid unnecessary painting */
-  backface-visibility: hidden; /* Hide the element if not on screen */
+  -webkit-transform: translateZ(0); 
+          transform: translateZ(0); /* Those two lines add composite layer trying to avoid unnecessary painting */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; /* Hide the element if not on screen */
 }
 
 .randomPizzaContainer {
   float: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
